@@ -23,12 +23,11 @@ public class MadLibsImpl implements MadLibs {
 
 	public static void main(String[] args) {
 		Prompter prompter = new PrompterImpl(System.out);
-		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-		InputReceiver inputReceiver = new InputReceiverImpl(reader);
+		InputReceiver inputReceiver = new InputReceiverImpl(new BufferedReader(new InputStreamReader(System.in)));
 		StoryTeller storyTeller = new StoryTellerImpl(System.out);
-		String token1 = "noun", token2 = "verb", token3 = "adjective";
-		String story = "The " + createToken(token1) + " was going to " + createToken(token2) + " very " + createToken(token3);
 		MadLibs madLibs = new MadLibsImpl(prompter, inputReceiver, storyTeller);
+
+		String story = "The <noun> was going to <verb> very <adjective>";
 		madLibs.run(story);
 	}
 	

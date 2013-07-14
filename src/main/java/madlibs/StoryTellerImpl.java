@@ -1,7 +1,6 @@
 package madlibs;
 
 import java.io.PrintStream;
-import java.io.PrintWriter;
 
 public class StoryTellerImpl implements StoryTeller {
 
